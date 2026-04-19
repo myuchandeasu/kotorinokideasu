@@ -795,33 +795,28 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
         </div>
     </section>
 
-    <!-- News Section -->
+    <!-- News Section (アメブロRSS自動連携) -->
     <section id="news" class="section soft-bg">
         <div class="container">
             <h2 class="section-title">ことりニュース</h2>
-            <div class="news-list">
-                <div class="news-item">
-                    <div class="news-date">2026.04.10</div>
-                    <div class="news-content">
-                        <h4>春のマイクラ部を開催しました！</h4>
-                        <p>みんなで協力して巨大なお城を建設！とても楽しい時間でした。次回は5月に開催予定です。</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2026.04.05</div>
-                    <div class="news-content">
-                        <h4>畑でスナップエンドウが採れました</h4>
-                        <p>自然農の畑で初収穫。来週のことりの樹で、みんなで塩ゆでにして食べようと思います。</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2026.04.01</div>
-                    <div class="news-content">
-                        <h4>本棚レンタルの募集を開始しました</h4>
-                        <p>あなたのお気に入りの本や作品を置いてみませんか？詳細はお問い合わせください。</p>
-                    </div>
+            <p style="text-align:center; margin-bottom: 24px; font-size:0.95rem; color:#888;">
+                🐦 アメブロの最新記事を自動表示しています
+            </p>
+            <!-- ここにアメブロRSS記事が自動挿入されます -->
+            <div id="ameba-news" class="news-list">
+                <div style="text-align:center; padding:40px; color:#aaa;">
+                    <div style="font-size:2rem; margin-bottom:10px;">🐦</div>
+                    <p>記事を読み込んでいます…</p>
                 </div>
             </div>
+            <p style="text-align:center; margin-top: 20px;">
+                <a id="ameba-more-link" href="#" target="_blank"
+                    style="color: var(--primary); font-weight:bold; font-size:0.95rem;"
+                    onmouseover="this.style.textDecoration='underline'"
+                    onmouseout="this.style.textDecoration='none'">
+                    📝 アメブロをもっと見る →
+                </a>
+            </p>
         </div>
     </section>
 
@@ -863,6 +858,69 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
     </footer>
 
     <script>
+        // ============================================================
+        // ★ アメブロIDをここに入力してください ★
+        //   例: https://ameblo.jp/kotorinoki/ の場合 → 'kotorinoki'
+        // ============================================================
+        const AMEBA_BLOG_ID = 'YOUR_AMEBA_ID'; // ← ここを変える！
+
+        // アメブロRSSを取得してニュースに表示
+        async function loadAmebaNews() {
+            const container = document.getElementById('ameba-news');
+            const moreLink = document.getElementById('ameba-more-link');
+
+            if (!AMEBA_BLOG_ID || AMEBA_BLOG_ID === 'YOUR_AMEBA_ID') {
+                container.innerHTML = `
+                    <div class="news-item">
+                        <div class="news-date">設定中</div>
+                        <div class="news-content">
+                            <h4>🐦 アメブロと連携準備中です</h4>
+                            <p>まもなく最新記事が自動で表示されます。</p>
+                        </div>
+                    </div>`;
+                return;
+            }
+
+            const rssUrl = `https://rssblog.ameba.jp/${AMEBA_BLOG_ID}/rss.html`;
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=3`;
+
+            try {
+                const res = await fetch(apiUrl);
+                const data = await res.json();
+
+                if (!data.items || data.items.length === 0) throw new Error('記事なし');
+
+                // 「もっと見る」リンクを設定
+                moreLink.href = `https://ameblo.jp/${AMEBA_BLOG_ID}/`;
+
+                // 記事を表示
+                container.innerHTML = data.items.map(item => {
+                    const date = new Date(item.pubDate);
+                    const dateStr = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`;
+                    // HTMLタグを除去してテキストだけ取得
+                    const desc = item.description.replace(/<[^>]*>/g, '').trim().slice(0, 80);
+                    return `
+                        <div class="news-item" style="cursor:pointer;" onclick="window.open('${item.link}','_blank')">
+                            <div class="news-date">${dateStr}</div>
+                            <div class="news-content">
+                                <h4>${item.title}</h4>
+                                <p>${desc}${desc.length >= 80 ? '…' : ''}</p>
+                            </div>
+                        </div>`;
+                }).join('');
+
+            } catch (e) {
+                container.innerHTML = `
+                    <div class="news-item">
+                        <div class="news-date">--</div>
+                        <div class="news-content">
+                            <h4>📖 ブログ記事の取得に失敗しました</h4>
+                            <p>アメブロIDが正しいか確認してください。</p>
+                        </div>
+                    </div>`;
+            }
+        }
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
@@ -883,7 +941,6 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
             document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
         });
 
-        // Close mobile nav when a link is clicked
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 hamburgerBtn.classList.remove('open');
@@ -891,6 +948,9 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
                 document.body.style.overflow = '';
             });
         });
+
+        // ページ読み込み時にアメブロ記事を取得
+        loadAmebaNews();
     </script>
 </body>
 
