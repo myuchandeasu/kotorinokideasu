@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ことりの樹 | 自由教育の寺子屋</title>
+    <meta name="description" content="小鳥のようにふらっと立ち寄れる場所。自由教育の寺子屋「ことりの樹」のデモページです。">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">ことりの樹</div>
+        <div class="nav-links">
+            <a href="#about">コンセプト</a>
+            <a href="#info">利用案内</a>
+            <a href="#activities">活動・イベント</a>
+            <a href="#story">はるみストーリー</a>
+            <a href="#contact" class="btn-sm">お問い合わせ</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#about" class="mobile-nav-link">コンセプト</a>
+        <a href="#info" class="mobile-nav-link">利用案内</a>
+        <a href="#activities" class="mobile-nav-link">活動・イベント</a>
+        <a href="#story" class="mobile-nav-link">はるみストーリー</a>
+        <a href="#contact" class="btn-sm mobile-nav-link">お問い合わせ</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg" style="background-image: url('images/activity_img.png');"></div>
+        <div class="hero-content glass-card">
+            <h1>ちょっと、休みに来ませんか？</h1>
+            <p class="subtitle">小鳥のようにふらっと立ち寄れる場所。<br>人と話したい日、しずかにすごしたい日、<br>理由があってもなくても、大丈夫。</p>
+            <a href="#info" class="btn-primary">くわしく見る</a>
+        </div>
+    </header>
+
+    <!-- Concept Section -->
+    <section id="about" class="section pattern-bg">
+        <div class="container">
+            <h2 class="section-title">ことりの樹とは</h2>
+            <div class="concept-content">
+                <div class="concept-text">
+                    <p>「ことりの樹」は、年齢を問わず、子どもから大人まで誰でも利用できる自由教育の寺子屋です。</p>
+                    <p>学校に行きづらいと感じている時、家以外の居場所が欲しい時、ただボーッとしたい時。どんな理由でも、理由がなくても、あなたはここにいていいんです。</p>
+                    <p>あたたかいお茶とアイスを用意して、小鳥たちが集まる止まり木のように、いつでもお待ちしています。</p>
+                </div>
+                <div class="concept-image">
+                    <img src="images/activity_img.png" alt="子どもたちがリラックスして過ごす様子">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information Section -->
+    <section id="info" class="section soft-bg">
+        <div class="container">
+            <h2 class="section-title">ご利用案内</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="icon">🕒</div>
+                    <h3>開所日時</h3>
+                    <p>毎週 水曜日<br>11:00 〜 15:00<br><span class="note">※出入りはいつでも自由です！</span></p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">🎒</div>
+                    <h3>対象年齢</h3>
+                    <p>制限なし（０歳〜大人まで）<br><span class="note">（どなたでも大歓迎です！）</span></p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">💰</div>
+                    <h3>参加費</h3>
+                    <p>1回 500円<br><span class="note">（アイスとドリンクのサービス付き🍦🍹）</span></p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">📍</div>
+                    <h3>場所</h3>
+                    <p>神奈川県横浜市栄区192<br><span class="note">一軒家のあたたかいおうちです</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="section pattern-bg">
+        <div class="container">
+            <h2 class="section-title">活動や過ごし方</h2>
+            <div class="activities-wrapper">
+                <div class="activity-item">
+                    <h3>🎨 自由に過ごす</h3>
+                    <p>本を読んだり、絵を描いたり、ゲームをしたり、寝そべったり。自分のペースで好きなように過ごせます。</p>
+                </div>
+                <div class="activity-item">
+                    <h3>🗣 みんなとお話し</h3>
+                    <p>スタッフや他の子どもたちと他愛もないおしゃべりや、悩み相談、ボードゲームで遊ぶこともあります。</p>
+                </div>
+                <div class="activity-item">
+                    <h3>🪴 ワークショップ（不定期）</h3>
+                    <p>これまでの実績として、鍋パ、プログラミング体験、手作りおやつ会などを開催しました。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Harumi Story Section -->
+    <section id="story" class="section soft-bg">
+        <div class="container">
+            <h2 class="section-title">はるみさんとことり</h2>
+
+            <div class="story-content"
+                style="background: rgba(255,255,255,0.7); padding: 50px 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; line-height: 2.2; font-size: 1.05rem; color: #555; max-width: 700px; margin: 0 auto;">
+                <p style="margin-bottom: 2em;">
+                    春になると、決まって来るウグイスがいるんですよ、<br>
+                    とはるみさんは当たり前のことのように言う。<br>
+                    だいたい同じ時間なんです、声でわかります、と<br>
+                    静かに続けた。<br>
+                    声でわかる、という言い方が自然すぎて、<br>
+                    こちらは一瞬聞き返したくなる。<br>
+                    どの子が来たのか、鳴き方で分かるらしい。<br>
+                    今日はあの子だな、という日もある。<br>
+                    少し離れたところで鳴いている日もあれば<br>
+                    すぐ近くに来る日もあるという。<br>
+                    特別な話ではない調子で語られるけれど<br>
+                    それは付き合いの続いている関係の話だった。<br>
+                    観察というより、暮らしの中の会話に近い。<br>
+                    話しかけますよ、おはようって。<br>
+                    返事はしてくれませんけどね、とそう言って笑った。
+                </p>
+                <p style="margin-bottom: 2em;">
+                    ことりの樹という名前は<br>
+                    その話を聞いたあとだと自然に思える。<br>
+                    来る人も似ている気がするんです、と<br>
+                    はるみさんは言った。<br>
+                    無理に近づかない方がいい人もいるし<br>
+                    黙って同じ場所にいる方がいい人もいる。<br>
+                    どう接するか決めるのではなく<br>
+                    相手の距離に合わせているだけだと言う。
+                </p>
+                <p style="margin-bottom: 2em;">
+                    やさしいですね、と言うと<br>
+                    少し違うんです、とすぐ返ってきた。<br>
+                    やさしくしようと思ってるわけじゃないんです。<br>
+                    思ったことは言います。<br>
+                    実際、言葉は率直だ。<br>
+                    遠回しな励ましや慰めはあまりない。<br>
+                    それでも言われた人は反発するより<br>
+                    少し考え込む様子になる。<br>
+                    表面だけ合わせても意味がない気がして。<br>
+                    でも突き放したいわけでもないんですよ。<br>
+                    その言い方には<br>
+                    関わりをやめない前提があった。
+                </p>
+                <p style="margin-bottom: 2em;">
+                    子育ての話になると<br>
+                    少しだけ間が空いた。<br>
+                    うまくいったことばかりじゃないですよ、と静かに話す。<br>
+                    いじめや不登校の時期もあったと言う。<br>
+                    何かしてあげたという感じではなく<br>
+                    ただそばにいただけだったと言う。<br>
+                    ずっと後になって子どもが<br>
+                    何も言わずに見守ってくれたことを<br>
+                    感謝してくれて<br>
+                    あれでよかったんだなと思った。<br>
+                    はるみさんはそう言って、少し笑った。
+                </p>
+                <p>
+                    ことりの樹でも<br>
+                    子どもを見守るのと同じ距離で<br>
+                    人と関わっている。元気にさせようとはしていません。<br>
+                    来たときのままでいられたら十分かなと。<br>
+                    場所があるだけで<br>
+                    いい時もありますからね。<br>
+                    行き場がないとき、<br>
+                    話したいとき、<br>
+                    時間があったら来てください。<br>
+                    当たり前の声かけのようにそう言った。<br>
+                    ことりのように立ち寄れる<br>
+                    気づくとそこにある場所。<br>
+                    また、ふと思い出したら、<br>
+                    扉を開けてください。
+                </p>
+            </div>
+
+            <div class="manga-trigger" style="margin-top: 60px; text-align: center;">
+                <div class="glass-card bounce"
+                    style="display: inline-block; padding: 40px 60px; cursor: pointer; border: 2px dashed #a0c49d; background: rgba(255,255,255,0.9);"
+                    onclick="alert('※ここに漫画のポップアップ画像が表示されます！準備中です。')">
+                    <div style="font-size: 3.5rem; color: #a0c49d; margin-bottom: 15px;">📖</div>
+                    <h3 style="margin-bottom: 10px; color: #555;">はるみさんの生い立ち</h3>
+                    <p style="margin-bottom: 0; font-size: 1rem; color: #777;">クリックして漫画を読む</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bookshelf Section -->
+    <section id="bookshelf" class="section pattern-bg">
+        <div class="container">
+            <h2 class="section-title">本棚お貸しします（レンタルスペース）</h2>
+            <div class="bookshelf-content">
+                <div class="bookshelf-text">
+                    <h3>あなたの「好き」を発信しませんか？</h3>
+                    <p>ことりの樹では、本棚の1段をギャラリーや販売スペースとしてお貸ししています。ハンドメイド作品の販売やお気に入りの本の紹介など、個人でもグループでもご利用いただけます。</p>
+                    <p>子どもたちが様々な大人の「好き」に触れる機会にもなります。ぜひ、あなたの小さな「お店」を開いてみませんか？</p>
+                </div>
+                <div class="bookshelf-grid">
+                    <div class="shelf-box">
+                        <p>👤 個人利用</p>
+                        <p style="font-size: 0.8rem; font-weight: normal; margin-top: 5px;">本や作品の展示・販売</p>
+                    </div>
+                    <div class="shelf-box">
+                        <p>👥 グループ利用</p>
+                        <p style="font-size: 0.8rem; font-weight: normal; margin-top: 5px;">サークルや団体のPR等</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section soft-bg">
+        <div class="container">
+            <h2 class="section-title">イベント・教室</h2>
+            <p class="section-desc" style="text-align: center; margin-bottom: 30px;">
+                ことりの樹では、様々なプログラムや活動が開催されています。<br>
+                <span style="font-size: 0.95rem; color: #e74c3c;">※各プログラムは有料となります。詳細はタップして内容をご確認ください。</span>
+            </p>
+
+            <div class="events-slider">
+
+                <!-- 画像ありのプログラム -->
+                <div class="event-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <!-- ユーザーが保存する前提の画像パス -->
+                    <img src="images/event_english.png" alt="姜式英語再生プログラム">
+                </div>
+
+                <div class="event-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <img src="images/event_ehon.png" alt="親子絵本と紙芝居の日">
+                </div>
+
+                <div class="event-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <img src="images/event_pan.png" alt="パン作りの会">
+                </div>
+
+                <div class="event-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <img src="images/event_sado.png" alt="佐渡島って？">
+                </div>
+
+                <div class="event-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <img src="images/event_ukulele.png" alt="ウクレレの先生募集">
+                </div>
+
+                <div class="event-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <img src="images/event_tenshin.png" alt="蒸篭で飲茶会">
+                </div>
+
+                <div class="event-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <img src="images/event_shizen.png" alt="自然農法">
+                </div>
+
+                <div class="event-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <img src="images/event_akatonbo.png" alt="赤とんぼを歌う会">
+                </div>
+
+                <!-- 画像なしのプログラム（テキストカードとして表示） -->
+                <div class="event-slide text-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🀄</div>
+                    <h3>麻雀クラブ</h3>
+                    <p style="color: #666; font-size: 0.95rem;">みんなでワイワイ卓を囲みませんか？初心者歓迎です。</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; font-weight: bold; color: var(--primary);">
+                        詳細はお問い合わせください</p>
+                </div>
+
+                <div class="event-slide text-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <div style="font-size: 4rem; margin-bottom: 20px;">📷</div>
+                    <h3>写真クラブ</h3>
+                    <p style="color: #666; font-size: 0.95rem;">カメラを持って外へ出かけたり、作品を見せ合ったりします。</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; font-weight: bold; color: var(--primary);">
+                        詳細はお問い合わせください</p>
+                </div>
+
+                <div class="event-slide text-slide">
+                    <div class="badge badge-paid">有料</div>
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🧤</div>
+                    <h3>どうぶつミトンの会</h3>
+                    <p style="color: #666; font-size: 0.95rem;">可愛いどうぶつのミトン作りを通して、手芸の時間を楽しみます。</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; font-weight: bold; color: var(--primary);">
+                        詳細はお問い合わせください</p>
+                </div>
+
+            </div>
+
+            <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #888;">
+                ← 左右にスクロールできます →
+            </p>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="section pattern-bg">
+        <div class="container">
+            <h2 class="section-title">運営メンバー紹介</h2>
+
+            <div class="profiles-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                <!-- 1人目：はるみさん -->
+                <div class="glass-card"
+                    style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px 20px;">
+                    <img src="images/profile_image.png" alt="はるみ"
+                        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                    <div class="profile-tag"
+                        style="background: var(--primary-light); color: var(--primary); padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px;">
+                        管理人</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">はるみ (Harumi)</h3>
+                    <p style="font-size: 0.95rem; color: #555;">
+                        子どもたちがホッと一息つける場所を作りたいという思いから、ことりの樹を始めました。<br>休日は畑で自然農を楽しんでいます。</p>
+                </div>
+
+                <!-- 2人目：大木あきひろさん -->
+                <div class="glass-card"
+                    style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px 20px;">
+                    <div
+                        style="width: 150px; height: 150px; border-radius: 50%; background: #eef2f5; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #8bc34a; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        👨‍🌾</div>
+                    <div class="profile-tag"
+                        style="background: var(--secondary-light); color: var(--secondary); padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px;">
+                        企画・運営部長</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">大木あきひろ</h3>
+                    <p style="font-size: 0.95rem; color: #555;">自然からの恵みを活かしたパン作りや、さまざまな企画を通して、あたたかい時間をみなさんと共有したいと考えています。
+                    </p>
+                </div>
+
+                <!-- 3人目：プレースホルダー -->
+                <div class="glass-card"
+                    style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px 20px;">
+                    <div
+                        style="width: 150px; height: 150px; border-radius: 50%; background: #eef2f5; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #ccc; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        👤</div>
+                    <div class="profile-tag"
+                        style="background: #eee; color: #888; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px;">
+                        運営メンバー</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #888;">準備中</h3>
+                    <p style="font-size: 0.95rem; color: #888;">ことりの樹を一緒に支える、素敵なメンバーをご紹介する予定です。</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section soft-bg">
+        <div class="container">
+            <h2 class="section-title">ことりニュース</h2>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-date">2026.04.10</div>
+                    <div class="news-content">
+                        <h4>春のマイクラ部を開催しました！</h4>
+                        <p>みんなで協力して巨大なお城を建設！とても楽しい時間でした。次回は5月に開催予定です。</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">2026.04.05</div>
+                    <div class="news-content">
+                        <h4>畑でスナップエンドウが採れました</h4>
+                        <p>自然農の畑で初収穫。来週のことりの樹で、みんなで塩ゆでにして食べようと思います。</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">2026.04.01</div>
+                    <div class="news-content">
+                        <h4>本棚レンタルの募集を開始しました</h4>
+                        <p>あなたのお気に入りの本や作品を置いてみませんか？詳細はお問い合わせください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Action Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container glass-card">
+            <h2 class="section-title">参加・お問い合わせ</h2>
+            <p class="contact-desc">初めての方でも、見学だけでも大歓迎です！<br>以下のフォーム、またはお電話・メールでお気軽にお問い合わせください。</p>
+
+            <div class="action-buttons">
+                <a href="https://forms.google.com/" target="_blank" class="btn-large bounce">
+                    📝 参加申し込みフォーム (Google Forms)
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <p><strong>📞 お電話:</strong> <a href="tel:090-XXXX-XXXX">090-XXXX-XXXX</a> (受付: 平日 10:00〜18:00)</p>
+                <p><strong>✉️ メール:</strong> <a href="mailto:info@kotorinoki-demo.com">info@kotorinoki-demo.com</a></p>
+                <p style="margin-top: 25px;">
+                    <a href="https://instagram.com/dummy" class="insta-link" target="_blank">📷 Instagramをフォロー！</a>
+                </p>
+            </div>
+
+            <div class="contact-form">
+                <h3>💬 直接のお問い合わせ</h3>
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('デモ版のため送信機能は無効です。');">
+                    <input type="text" placeholder="お名前（ニックネーム可）" required>
+                    <input type="email" placeholder="メールアドレス" required>
+                    <textarea rows="4" placeholder="お問い合わせ内容" required></textarea>
+                    <button type="submit" class="btn-primary">送信する</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ことりの樹. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger menu toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+
+        // Close mobile nav when a link is clicked
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('open');
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+
+</html>
