@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://myuchandeasu.github.io/kotorinokideasu/sitemap.xml

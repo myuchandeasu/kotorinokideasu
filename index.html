@@ -4,8 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ことりの樹 | 自由教育の寺子屋</title>
-    <meta name="description" content="小鳥のようにふらっと立ち寄れる場所。自由教育の寺子屋「ことりの樹」のデモページです。">
+    <title>ことりの樹 | 横浜・栄区の自由教育 寺子屋コミュニティスペース</title>
+    <meta name="description" content="横浜市栄区にある自由教育の寺子屋「ことりの樹」。子どもから大人まで誰でも立ち寄れるコミュニティスペース。毎週水曜11〜15時、参加費500円（アイス・ドリンク付き）。">
+    <meta name="keywords" content="ことりの樹, 横浜, 栄区, 自由教育, 寺子屋, コミュニティスペース, 不登校, 居場所, 子ども">
+    <meta name="author" content="ことりの樹">
+    <link rel="canonical" href="https://myuchandeasu.github.io/kotorinokideasu/">
+
+    <!-- OGP（SNSシェア対策） -->
+    <meta property="og:title" content="ことりの樹 | 横浜・栄区の自由教育 寺子屋">
+    <meta property="og:description" content="小鳥のようにふらっと立ち寄れる場所。毎週水曜11〜15時、参加費500円。横浜市栄区の自由教育コミュニティスペースです。">
+    <meta property="og:image" content="https://myuchandeasu.github.io/kotorinokideasu/nanohana.png">
+    <meta property="og:url" content="https://myuchandeasu.github.io/kotorinokideasu/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="ことりの樹">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ことりの樹 | 横浜・栄区の自由教育 寺子屋">
+    <meta name="twitter:description" content="小鳥のようにふらっと立ち寄れる場所。毎週水曜11〜15時、参加費500円。横浜市栄区。">
+    <meta name="twitter:image" content="https://myuchandeasu.github.io/kotorinokideasu/nanohana.png">
+
+    <!-- JSON-LD 構造化データ（Googleがローカル施設として認識） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CommunityCenter",
+      "name": "ことりの樹",
+      "alternateName": "自由教育の寺子屋 ことりの樹",
+      "description": "横浜市栄区にある、子どもから大人まで誰でも利用できる自由教育のコミュニティスペース。毎週水曜日11〜15時開所。参加費500円。",
+      "url": "https://myuchandeasu.github.io/kotorinokideasu/",
+      "email": "kotorinoki.2026@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "192",
+        "addressLocality": "栄区",
+        "addressRegion": "神奈川県横浜市",
+        "addressCountry": "JP"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Wednesday",
+        "opens": "11:00",
+        "closes": "15:00"
+      },
+      "priceRange": "¥500〜"
+    }
+    </script>
+
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
@@ -1234,7 +1280,7 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
 
             <div class="contact-info">
                 <p><strong>✉️ メール:</strong> 
-                   <span class="email-copy-area" onclick="copyEmailText(this)" style="cursor: pointer; color: var(--primary); text-decoration: underline; position: relative; padding: 5px;">kotorinoki.2026@gmail.com<span class="copy-tooltip" style="visibility: hidden; opacity: 0; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; white-space: nowrap; transition: 0.3s; margin-bottom: 5px;">クリックしてコピー</span></span><br>
+                   <span class="email-copy-area" onclick="copyEmailText(this)" style="cursor: pointer; color: var(--primary); text-decoration: underline; position: relative; padding: 5px;" id="email-display"><span class="copy-tooltip" style="visibility: hidden; opacity: 0; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; white-space: nowrap; transition: 0.3s; margin-bottom: 5px;">クリックしてコピー</span></span><br>
                 <span style="font-size: 0.9em; color: #555;">（受付：24時間いつでも / 返信：随時）</span></p>
                 <p style="margin-top: 15px;"><strong style="font-size: 1.1rem;">🌱 活動日:</strong> 毎週水曜 11:00〜15:00</p>
                 <p style="margin-top: 25px;">
@@ -1279,12 +1325,12 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
         // ★ アメブロIDをここに入力してください ★
         //   例: https://ameblo.jp/kotorinoki/ の場合 → 'kotorinoki'
         // ============================================================
-        const AMEBA_BLOG_ID = 'YOUR_AMEBA_ID'; // ← ここを変える！
+        const AMEBA_BLOG_ID = 'YOUR_AMEBA_ID'; // ← アメブロIDをここに入力（例: 'kotorinoki'）
 
         // アメブロRSSを取得してニュースに表示
         async function loadAmebaNews() {
             const container = document.getElementById('ameba-news');
-            const moreLink = document.getElementById('ameba-more-link');
+            const moreLink = document.getElementById('ameba-more-link'); // nullチェック済み
 
             if (!AMEBA_BLOG_ID || AMEBA_BLOG_ID === 'YOUR_AMEBA_ID') {
                 container.innerHTML = `
@@ -1307,8 +1353,8 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
 
                 if (!data.items || data.items.length === 0) throw new Error('記事なし');
 
-                // 「もっと見る」リンクを設定
-                moreLink.href = `https://ameblo.jp/${AMEBA_BLOG_ID}/`;
+                // 「もっと見る」リンクを設定（要素が存在する場合のみ）
+                if (moreLink) moreLink.href = `https://ameblo.jp/${AMEBA_BLOG_ID}/`;
 
                 // 記事を表示
                 container.innerHTML = data.items.map(item => {
@@ -1406,9 +1452,24 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
         function openRulesModal() { openModal('rulesModal'); }
         function closeRulesModal() { closeModal('rulesModal'); }
         
+        // メールアドレス難読化（スパムbot対策）
+        (function() {
+            const u = 'kotorinoki.2026';
+            const d = 'gmail.com';
+            const email = u + '@' + d;
+            const el = document.getElementById('email-display');
+            if (el) {
+                // テキストノードとしてアドレスを挿入（ソースに直書きしない）
+                const textNode = document.createTextNode(email);
+                el.insertBefore(textNode, el.firstChild);
+            }
+        })();
+
         // メールアドレスをワンクリックでコピー
         function copyEmailText(el) {
-            navigator.clipboard.writeText("kotorinoki.2026@gmail.com").then(function() {
+            const u = 'kotorinoki.2026';
+            const d = 'gmail.com';
+            navigator.clipboard.writeText(u + '@' + d).then(function() {
                 var tooltip = el.querySelector(".copy-tooltip");
                 tooltip.innerText = "コピーしました！";
                 setTimeout(function() { tooltip.innerText = "クリックしてコピー"; }, 2000);
