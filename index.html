@@ -715,6 +715,50 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     font-weight: bold;
 }
+
+/* Profile Accordion */
+.profile-bio-wrap {
+    position: relative;
+    width: 100%;
+    text-align: left;
+}
+.profile-bio {
+    max-height: 5.55em; /* 約3行 (line-height 1.85) */
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+    position: relative;
+}
+.profile-bio.expanded {
+    max-height: 3000px;
+}
+.profile-bio-fade {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2.5em;
+    background: linear-gradient(transparent, rgba(253,251,247,0.97));
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.profile-bio.expanded + .profile-bio-fade {
+    opacity: 0;
+}
+.profile-read-more {
+    background: none;
+    border: 1px solid var(--primary-light);
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s;
+    font-family: inherit;
+}
+.profile-read-more:hover {
+    background: var(--primary-light);
+}
+
     </style>
 </head>
 
@@ -1215,8 +1259,11 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
                         style="background: var(--secondary-light); color: var(--secondary); padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px;">
                         企画・運営部長</div>
                     <h3 style="font-size: 1.5rem; margin-bottom: 15px;">おおき あきひろ</h3>
-                    <p style="font-size: 0.95rem; color: #555; line-height: 1.9; text-align: left;">
-                        パン屋さん、農作業・養豚業、印刷業、指圧マッサージ師、介護スタッフなどの仕事遍歴があります。現在はフリーの活動で自分のやりたいことに専念できています。ことりの樹で新たな交流や発信ができたら嬉しいです。</p>
+                    <div class="profile-bio-wrap">
+                        <p class="profile-bio expanded" style="font-size: 0.95rem; color: #555; line-height: 1.9;">
+                            パン屋さん、農作業・養豚業、印刷業、指圧マッサージ師、介護スタッフなどの仕事遍歴があります。現在はフリーの活動で自分のやりたいことに専念できています。ことりの樹で新たな交流や発信ができたら嬉しいです。</p>
+                        <div class="profile-bio-fade"></div>
+                    </div>
                 </div>
 
                 <!-- 2人目：鍛葉 さちこ -->
@@ -1228,14 +1275,18 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
                         style="background: var(--primary-light); color: var(--primary); padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px;">
                         企画</div>
                     <h3 style="font-size: 1.5rem; margin-bottom: 15px;">鍛葉 さちこ</h3>
-                    <p style="font-size: 0.9rem; color: #555; line-height: 1.9; text-align: left;">
-                        関西大学大学院 文学研究科 宗教・人類学専攻 修了。人間能力開発研究所（米国）プロフェッショナル・マザー認定。家庭教師のトライにてトッププロ認定講師として長年指導。モンテッソーリ幼稚園および自由学校を立ち上げ、経営。<br><br>
-                        <em style="color: var(--primary);">「ひとりひとりの夢の中に、私の夢がある」</em><br><br>
-                        そそっかしいけれど、いざというときは力持ち。人呼んで「カジバ（梶葉）の馬鹿力」。天然か天才かと聞かれたら、紙一重です（笑）。<br><br>
-                        4人の子どもを育てる中で、「自由」と「変革」を軸に生きてきました。いまは"若き高齢者"として、「穏やかな革命（Gentle Revolution）」を提唱しています。<br><br>
-                        長男の障がいの治療が教育に携わるきっかけ。教育は、社会を変えるいちばん確かな方法。マリア・モンテッソーリの理念をもとに、赤ちゃんから後期高齢者まで、その人らしい成長に寄り添ってきました。<br><br>
-                        ことりの樹では、<strong>Flowering, not coaching.</strong>（教えない、咲いていく）を合言葉に、一人ひとりの内側から自然にひらいていく力を大切にしています。
-                    </p>
+                    <div class="profile-bio-wrap">
+                        <p class="profile-bio" style="font-size: 0.9rem; color: #555; line-height: 1.9;">
+                            関西大学大学院 文学研究科 宗教・人類学専攻 修了。人間能力開発研究所（米国）プロフェッショナル・マザー認定。家庭教師のトライにてトッププロ認定講師として長年指導。モンテッソーリ幼稚園および自由学校を立ち上げ、経営。<br><br>
+                            <em style="color: var(--primary);">「ひとりひとりの夢の中に、私の夢がある」</em><br><br>
+                            そそっかしいけれど、いざというときは力持ち。人呼んで「カジバ（梶葉）の馬鹿力」。天然か天才かと聞かれたら、紙一重です（笑）。<br><br>
+                            4人の子どもを育てる中で、「自由」と「変革」を軸に生きてきました。いまは"若き高齢者"として、「穏やかな革命（Gentle Revolution）」を提唱しています。<br><br>
+                            長男の障がいの治療が教育に携わるきっかけ。教育は、社会を変えるいちばん確かな方法。マリア・モンテッソーリの理念をもとに、赤ちゃんから後期高齢者まで、その人らしい成長に寄り添ってきました。<br><br>
+                            ことりの樹では、<strong>Flowering, not coaching.</strong>（教えない、咲いていく）を合言葉に、一人ひとりの内側から自然にひらいていく力を大切にしています。
+                        </p>
+                        <div class="profile-bio-fade"></div>
+                    </div>
+                    <button class="profile-read-more" onclick="toggleBio(this)">もっと読む ▼</button>
                 </div>
 
                 <!-- 3人目：みゅう -->
@@ -1247,10 +1298,14 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
                         style="background: #e8f5e9; color: #388e3c; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px;">
                         学生メンバー</div>
                     <h3 style="font-size: 1.5rem; margin-bottom: 15px;">みゅう</h3>
-                    <p style="font-size: 0.95rem; color: #555; line-height: 1.9; text-align: left;">
-                        通信制高校卒業。現在、横浜市立大学・国際教養学部に在学。Universiti Sains Malaysia への交換留学を経て、多様な生き方や文化に触れてきました。<br><br>
-                        寄り道も多かった人生ですが、今はアラビア語を勉強したり、ウクレレを弾いたり、ダンスを踊ったりする時間が何よりの癒やしです。飾らない自分を大切にしながら、この団体の一員として優しい社会づくりをお手伝いできればと思っています。
-                    </p>
+                    <div class="profile-bio-wrap">
+                        <p class="profile-bio" style="font-size: 0.95rem; color: #555; line-height: 1.9;">
+                            通信制高校卒業。現在、横浜市立大学・国際教養学部に在学。Universiti Sains Malaysia への交換留学を経て、多様な生き方や文化に触れてきました。<br><br>
+                            寄り道も多かった人生ですが、今はアラビア語を勉強したり、ウクレレを弾いたり、ダンスを踊ったりする時間が何よりの癒やしです。飾らない自分を大切にしながら、この団体の一員として優しい社会づくりをお手伝いできればと思っています。
+                        </p>
+                        <div class="profile-bio-fade"></div>
+                    </div>
+                    <button class="profile-read-more" onclick="toggleBio(this)">もっと読む ▼</button>
                 </div>
 
             </div>
@@ -1490,6 +1545,14 @@ footer { text-align: center; padding: 30px; background: var(--text-color); color
         function closeHelperModal() { closeModal('helperModal'); }
         function openRulesModal() { openModal('rulesModal'); }
         function closeRulesModal() { closeModal('rulesModal'); }
+
+        // プロフィール アコーディオン
+        function toggleBio(btn) {
+            const wrap = btn.previousElementSibling;
+            const bio = wrap.querySelector('.profile-bio');
+            const expanded = bio.classList.toggle('expanded');
+            btn.textContent = expanded ? '閉じる ▲' : 'もっと読む ▼';
+        }
         
         // メールアドレス難読化（スパムbot対策）
         (function() {
